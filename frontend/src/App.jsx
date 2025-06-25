@@ -9,7 +9,7 @@ const App = () => {
     <>
       <ToastContainer />
       <Navigation />
-      <main className=" py-3 bg-[#5e42a6]">
+      <main className=" py-3 ]">
         <Outlet />
       </main>
     </>

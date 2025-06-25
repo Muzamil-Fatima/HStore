@@ -43,7 +43,7 @@ const Login = () => {
   };
 
   return (
-    <div className="bg-[#5e42a6]">
+    <div>
       <section className="pl-[10rem] flex flex-wrap ">
         <div className="mr-[4rem] mt-[5rem]">
           <h1 className="text-2xl font-semibold mb-4">Sign In</h1>
