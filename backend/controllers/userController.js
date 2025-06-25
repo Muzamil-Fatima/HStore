@@ -35,22 +35,27 @@ const createUser = asyncHandler(async (req, res) => {
 const loginUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;
 
+  console.log(email);
+  console.log(password);
+
   const existingUser = await User.findOne({ email });
+
   if (existingUser) {
     const isPasswordValid = await bcrypt.compare(
       password,
       existingUser.password
     );
+
     if (isPasswordValid) {
       createToken(res, existingUser._id);
 
       res.status(201).json({
         _id: existingUser._id,
         username: existingUser.username,
-        eamil: existingUser.email,
+        email: existingUser.email,
         isAdmin: existingUser.isAdmin,
       });
-      return; //Exit the function after sending the response
+      return;
     }
   }
 });
@@ -58,7 +63,7 @@ const loginUser = asyncHandler(async (req, res) => {
 const logOutUser = asyncHandler(async (req, res) => {
   res.cookie("jwt", "", {
     httpOnly: true,
-    expires: new Date(),
+    expires: new Date(0),
   });
   res.status(200).json({ message: "Logout successfully" });
 });
