@@ -26,7 +26,7 @@ const createCategory = asyncHandler(async (req, res) => {
 const updateCategory = asyncHandler(async (req, res) => {
   try {
     const { name } = req.body;
-    const { categoryId } = req.body;
+    const { categoryId } = req.params;
 
     const category = await Category.findOne({ _id: categoryId });
 
@@ -43,7 +43,7 @@ const updateCategory = asyncHandler(async (req, res) => {
   }
 });
 
-const deleteCategory = asyncHandler(async (req, res) => {
+const removeCategory = asyncHandler(async (req, res) => {
   try {
     const deleteCategory = await Category.findByIdAndDelete(
       req.params.categoryId
@@ -81,7 +81,7 @@ const getCategory = asyncHandler(async (req, res) => {
 export {
   createCategory,
   updateCategory,
-  deleteCategory,
+  removeCategory,
   listCategories,
   getCategory,
 };

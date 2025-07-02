@@ -8,6 +8,7 @@ import {
 import { toast } from "react-toastify";
 import CategoryForm from "../../components/CategoryForm";
 import AdminMenu from "./AdminMenu";
+import Modal from "../../components/Model";
 
 const CategoryList = () => {
   const { data: categories } = useFetchCategoriesQuery();
@@ -15,6 +16,8 @@ const CategoryList = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [updatingName, setUpdatingName] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
+
+  console.log(selectedCategory);
 
   const [createCategory] = useCreateCategoryMutation();
   const [updateCategory] = useUpdateCategoryMutation();

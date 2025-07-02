@@ -3,7 +3,7 @@ import { authenticate, authorizeAdmin } from "../middlewares/authMiddleware.js";
 import {
   createCategory,
   updateCategory,
-  deleteCategory,
+  removeCategory,
   listCategories,
   getCategory,
 } from "../controllers/categoryController.js";
@@ -14,7 +14,7 @@ router.route("/").post(authenticate, authorizeAdmin, createCategory);
 router
   .route("/:categoryId")
   .put(authenticate, authorizeAdmin, updateCategory)
-  .delete(authenticate, authorizeAdmin, deleteCategory);
+  .delete(authenticate, authorizeAdmin, removeCategory);
 router.get("/categories", listCategories);
 router.get("/:id", getCategory);
 
