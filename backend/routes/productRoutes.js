@@ -19,8 +19,8 @@ import checkId from "../middlewares/checkId.js";
 
 router
   .route("/")
-  .post(authenticate, authorizeAdmin, formidable(), addProduct)
-  .get(fetchProduct);
+  .get(fetchProduct)
+  .post(authenticate, authorizeAdmin, formidable(), addProduct);
 
 router.route("/allproducts").get(fetchAllProducts);
 router.route("/:id/reviews").post(authenticate, checkId, addProductReviw);

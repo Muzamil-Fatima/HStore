@@ -6,13 +6,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   return (
-    <>
+    <div>
       <ToastContainer />
       <Navigation />
-      <main className=" py-3 ]">
+      <main className=" py-3 ">
         <Outlet />
       </main>
-    </>
+    </div>
   );
 };
 
