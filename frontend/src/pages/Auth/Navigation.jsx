@@ -13,6 +13,7 @@ import {
   AiOutlineUserAdd,
 } from "react-icons/ai";
 import { FaHeart } from "react-icons/fa";
+import FavoritesCount from "../products/FavoritesCount";
 
 const Navigation = () => {
   const { userInfo } = useSelector((state) => state.auth);
@@ -95,7 +96,7 @@ const Navigation = () => {
             <span className="hidden nav-item-name mt-[3rem]">
               Favorites
             </span>{" "}
-            {/* <FavoritesCount /> */}
+            <FavoritesCount />
           </div>
         </Link>
       </div>

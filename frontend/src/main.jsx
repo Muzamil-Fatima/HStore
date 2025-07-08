@@ -17,12 +17,16 @@ import ProductList from "./pages/Admin/ProductList.jsx";
 import ProductUpdate from "./pages/Admin/productUpdate.jsx";
 import Home from "./pages/Home.jsx";
 import AllProducts from "./pages/Admin/AllProducts.jsx";
+import Favorites from "./pages/products/Favorites.jsx";
+import ProductDetails from "./pages/products/ProductDetails.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route path="login" element={<Login />} />
       <Route path="/register" element={<Register />} />
+      <Route path="/favorite" element={<Favorites />} />
+      <Route path="/product/:id" element={<ProductDetails />} />
       <Route index={true} path="/" element={<Home />} />
 
       <Route path="" element={<PrivateRoutes />}>
